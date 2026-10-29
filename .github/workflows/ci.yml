@@ -1,3 +1,4 @@
+
 name: CI StockGuard
 run-name: CI ejecutado por ${{ github.actor }}
 
@@ -23,10 +24,10 @@ jobs:
       - name: Instalar dependencias
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          python -m pip install -r requirements.txt
 
       - name: Validar sintaxis
         run: python -m compileall src tests
 
       - name: Ejecutar pruebas
-        run: py -m pytest tests/test_inventario.py -v
+        run: python -m pytest -v
